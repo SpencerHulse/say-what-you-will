@@ -1,9 +1,9 @@
 const router = require("express").Router();
-const { Post } = require("../../models/index");
+const { Comment } = require("../../models/index");
 
-// All Posts - api/posts
+// Get All Comments - api/comments
 router.get("/", (req, res) => {
-  Post.findAll()
+  Comment.findAll()
     .then((data) => res.status(200).json(data))
     .catch((err) => {
       console.log(err);
@@ -11,9 +11,9 @@ router.get("/", (req, res) => {
     });
 });
 
-// Single Post - api/posts/:id
+// Get Single Comment - api/comments/:id
 router.get("/:id", (req, res) => {
-  Post.findOne({ where: { id: req.params.id } })
+  Comment.findOne({ where: { id: req.params.id } })
     .then((data) => res.status(200).json(data))
     .catch((err) => {
       console.log(err);
@@ -21,12 +21,12 @@ router.get("/:id", (req, res) => {
     });
 });
 
-// Create Post - api/posts
+// Create Comment - api/comments
 router.post("/", (req, res) => {
-  Post.create({
+  Comment.create({
     user_id: req.body.user_id,
-    title: req.body.title,
-    post_text: req.body.post_text,
+    post_id: req.body.post_id,
+    comment_text: req.body.comment_text,
   })
     .then((data) => res.status(200).json(data))
     .catch((err) => {
@@ -35,15 +35,14 @@ router.post("/", (req, res) => {
     });
 });
 
-// Update Post - api/posts/:id
+// Update Comment - api/comments/:id
 router.put("/:id", (req, res) => {
-  Post.update(req.body, {
+  Comment.update(req.body, {
     where: { id: req.params.id },
   })
     .then((data) => {
       if (!data) {
-        res.status(404).json({ message: "No post found with this id" });
-        return;
+        res.status(404).json({ message: "No comment found with this id" });
       }
 
       res.status(200).json(data);
@@ -54,13 +53,12 @@ router.put("/:id", (req, res) => {
     });
 });
 
-// Delete Post - api/posts/:id
+// Delete Comment - api/comments/:id
 router.delete("/:id", (req, res) => {
-  Post.destroy({ where: { id: req.params.id } })
+  Comment.destroy({ where: { id: req.params.id } })
     .then((data) => {
       if (!data) {
-        res.status(404).json({ message: "No post found with this id" });
-        return;
+        res.status(404).json({ message: "No comment found with this id" });
       }
 
       res.status(200).json(data);
