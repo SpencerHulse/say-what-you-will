@@ -1,9 +1,9 @@
 const router = require("express").Router();
-const { User } = require("../../models/index");
+const { Post } = require("../../models/index");
 
-// All Users - api/users
+// All Posts - api/posts
 router.get("/", (req, res) => {
-  User.findAll()
+  Post.findAll()
     .then((data) => res.status(200).json(data))
     .catch((err) => {
       console.log(err);
@@ -11,9 +11,9 @@ router.get("/", (req, res) => {
     });
 });
 
-// Single User - api/users/:id
+// Single Post - api/posts/:id
 router.get("/:id", (req, res) => {
-  User.findOne({ where: { id: req.params.id } })
+  Post.findOne({ where: { id: req.params.id } })
     .then((data) => res.status(200).json(data))
     .catch((err) => {
       console.log(err);
@@ -21,12 +21,12 @@ router.get("/:id", (req, res) => {
     });
 });
 
-// Create User - api/users
+// Create Post - api/posts
 router.post("/", (req, res) => {
-  User.create({
-    username: req.body.username,
-    email: req.body.email,
-    password: req.body.password,
+  Post.create({
+    user_id: req.body.user_id,
+    title: req.body.title,
+    post_text: req.body.post_text,
   })
     .then((data) => res.status(200).json(data))
     .catch((err) => {
@@ -35,9 +35,9 @@ router.post("/", (req, res) => {
     });
 });
 
-// Update Existing User - api/users/:id
+// Update Post - api/posts/:id
 router.put("/:id", (req, res) => {
-  User.update(req.body, {
+  Post.update(req.body, {
     where: { id: req.params.id },
   })
     .then((data) => {
@@ -54,9 +54,9 @@ router.put("/:id", (req, res) => {
     });
 });
 
-// Delete a User - api/users/:id
+// Delete Post - api/posts/:id
 router.delete("/:id", (req, res) => {
-  User.destroy({ where: { id: req.params.id } })
+  Post.destroy({ where: { id: req.params.id } })
     .then((data) => {
       if (!data) {
         res.status(404).json({ message: "No user found with this id" });
