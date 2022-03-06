@@ -12,7 +12,7 @@ const sequelize = process.env.JAWSDB_URL
       dialect: "mysql",
       port: 3306,
       // Prevents excessive console logs
-      // logging: false,
+      logging: false,
     });
 
 module.exports = sequelize;
