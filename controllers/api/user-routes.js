@@ -1,9 +1,9 @@
 const router = require("express").Router();
-const { User } = require("../../models/index");
+const { User, Post, Comment } = require("../../models/index");
 
 // All Users - api/users
 router.get("/", (req, res) => {
-  User.findAll()
+  User.findAll({ attributes: { exclude: ["password"] } })
     .then((data) => res.status(200).json(data))
     .catch((err) => {
       console.log(err);
@@ -13,8 +13,26 @@ router.get("/", (req, res) => {
 
 // Single User - api/users/:id
 router.get("/:id", (req, res) => {
-  User.findOne({ where: { id: req.params.id } })
-    .then((data) => res.status(200).json(data))
+  User.findOne({
+    where: { id: req.params.id },
+    attributes: { exclude: ["password"] },
+    include: {
+      model: Post,
+      attributes: ["id", "title", "post_text", "created_at", "updated_at"],
+      include: {
+        model: Comment,
+        attributes: ["id", "comment_text", "created_at", "updated_at"],
+      },
+    },
+  })
+    .then((data) => {
+      if (!data) {
+        res.status(404).json({ message: "No user found with this id" });
+        return;
+      }
+
+      res.status(200).json(data);
+    })
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);

@@ -1,9 +1,16 @@
 const router = require("express").Router();
-const { Post } = require("../../models/index");
+const { Post, Comment, User } = require("../../models/index");
 
 // All Posts - api/posts
 router.get("/", (req, res) => {
-  Post.findAll()
+  Post.findAll({
+    attributes: ["id", "title", "post_text", "created_at", "updated_at"],
+    include: {
+      model: Comment,
+      attributes: ["id", "comment_text", "created_at", "updated_at"],
+      include: { model: User, attributes: ["username"] },
+    },
+  })
     .then((data) => res.status(200).json(data))
     .catch((err) => {
       console.log(err);
@@ -13,7 +20,15 @@ router.get("/", (req, res) => {
 
 // Single Post - api/posts/:id
 router.get("/:id", (req, res) => {
-  Post.findOne({ where: { id: req.params.id } })
+  Post.findOne({
+    where: { id: req.params.id },
+    attributes: ["id", "title", "post_text", "created_at", "updated_at"],
+    include: {
+      model: Comment,
+      attributes: ["id", "comment_text", "created_at", "updated_at"],
+      include: { model: User, attributes: ["username"] },
+    },
+  })
     .then((data) => res.status(200).json(data))
     .catch((err) => {
       console.log(err);
@@ -28,7 +43,14 @@ router.post("/", (req, res) => {
     title: req.body.title,
     post_text: req.body.post_text,
   })
-    .then((data) => res.status(200).json(data))
+    .then((data) => {
+      if (!data) {
+        res.status(404).json({ message: "No post found with this id" });
+        return;
+      }
+
+      res.status(200).json(data);
+    })
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
