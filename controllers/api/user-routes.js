@@ -46,7 +46,15 @@ router.post("/", (req, res) => {
     email: req.body.email,
     password: req.body.password,
   })
-    .then((data) => res.status(200).json(data))
+    .then((data) => {
+      req.session.save(() => {
+        req.session.user_id = data.id;
+        req.session.username = data.username;
+        req.session.loggedIn = true;
+
+        res.status(200).json(data);
+      });
+    })
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
