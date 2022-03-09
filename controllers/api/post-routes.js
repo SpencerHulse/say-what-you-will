@@ -29,8 +29,15 @@ router.get("/:id", (req, res) => {
       include: { model: User, attributes: ["username"] },
     },
   })
-    .then((data) => res.status(200).json(data))
-    .catch((err) => {
+    .then((data) => {
+      if (!data) {
+        res.status(404).json({ message: "No post found with this id" });
+        return;
+      }
+
+      res.status(200).json(data);
+    })
+    .catch.catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
@@ -43,14 +50,7 @@ router.post("/", (req, res) => {
     title: req.body.title,
     post_text: req.body.post_text,
   })
-    .then((data) => {
-      if (!data) {
-        res.status(404).json({ message: "No post found with this id" });
-        return;
-      }
-
-      res.status(200).json(data);
-    })
+    .then((data) => res.status(200).json(data))
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
