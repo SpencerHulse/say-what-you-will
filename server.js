@@ -9,9 +9,8 @@ const sequelize = require("./config/connection");
 
 // Handlebars templates
 const exphbs = require("express-handlebars");
-const hbs = exphbs.create({
-  /* any custom helpers go here */
-});
+const helpers = require("./utils/helpers");
+const hbs = exphbs.create({ helpers });
 // Set the handlebars engine
 app.set("view engine", "handlebars");
 app.engine("handlebars", hbs.engine);
