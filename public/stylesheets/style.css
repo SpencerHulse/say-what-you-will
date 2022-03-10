@@ -19,6 +19,7 @@ html {
 header {
   background-color: var(--primary-color);
   color: var(--secondary-color);
+  padding-bottom: 5px;
 }
 
 .header-wrapper {
@@ -26,10 +27,19 @@ header {
   margin: 0 auto;
 }
 
-h1 {
-  margin-left: 40px;
-  padding-bottom: 30px;
+.page-title-wrapper {
+  background-color: var(--secondary-color);
+  width: fit-content;
+  color: var(--primary-color);
+  margin-left: 10px;
+  border-radius: 15px;
+  box-shadow: 7px 7px 0 rgba(168, 168, 168, 255);
+}
+
+.page-title {
+  font-size: 42px;
   cursor: default;
+  padding: 10px 20px;
 }
 
 nav {
@@ -38,10 +48,15 @@ nav {
 
 nav a,
 nav button {
-  font-size: 20px;
+  font-size: 24px;
   text-decoration: none;
   color: var(--secondary-color);
-  margin: 20px 0 0 40px;
+  margin: 20px 70px 0 10px;
+}
+
+nav a:last-child,
+nav button {
+  margin-right: 0;
 }
 
 ol {

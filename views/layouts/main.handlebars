@@ -16,6 +16,7 @@
       <div class="header-wrapper">
         <nav>
           <a href="/">Home</a>
+          <a href="/dashboard">Dashboard</a>
           {{#if loggedIn}}
             {{! Directly logs you out }}
             <button id="logout">Logout</button>
@@ -24,9 +25,11 @@
             <a href="/login">Login</a>
           {{/if}}
         </nav>
-        <h1>
-          Say What You Will
-        </h1>
+        <div class="page-title-wrapper">
+          <h1 class="page-title">
+            Say What You Will
+          </h1>
+        </div>
       </div>
     </header>
     {{{body}}}
