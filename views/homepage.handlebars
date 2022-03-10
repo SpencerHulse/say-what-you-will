@@ -1,1 +1,20 @@
-<div>Hello World</div>
+<ol class="post-list">
+  {{#each posts as |post|}}
+    <li>
+      <article class="post">
+        <div class="post-heading">
+          <a href="/post/1" class="title">{{title}}</a>
+          <div class="meta">
+            Posted by
+            {{user.username}}
+            on
+            {{created_at}}
+          </div>
+        </div>
+        <div>
+          <p class="post-content">{{post_text}}</p>
+        </div>
+      </article>
+    </li>
+  {{/each}}
+</ol>

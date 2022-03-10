@@ -1,0 +1,84 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: rgba(35, 16, 16, 255);
+  --secondary-color: rgba(217, 234, 211, 255);
+}
+
+/* Main Handlebars */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+header {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.header-wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+
+h1 {
+  margin-left: 40px;
+  padding-bottom: 30px;
+  cursor: default;
+}
+
+nav {
+  display: flex;
+}
+
+nav a,
+nav button {
+  font-size: 20px;
+  text-decoration: none;
+  color: var(--secondary-color);
+  margin: 20px 0 0 40px;
+}
+
+ol {
+  list-style: none;
+  padding: 0;
+}
+
+/* Posts */
+.post {
+  width: 90%;
+  margin: 0 auto;
+  border: 3px solid var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.post-heading {
+  display: flex;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 10px 20px;
+}
+
+.post-heading a {
+  text-decoration: none;
+  color: var(--secondary-color);
+  font-size: 26px;
+}
+
+.meta {
+  font-size: 16px;
+  margin-bottom: 3px;
+  margin-left: 25px;
+}
+
+.post-content {
+  font-size: 18px;
+  margin: 10px 20px;
+}
