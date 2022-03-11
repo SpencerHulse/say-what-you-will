@@ -224,6 +224,20 @@ input,
   padding: 0 20px;
 }
 
+.new-post-btn {
+  position: absolute;
+  font-size: 28px;
+  text-align: center;
+  background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  padding: 15px 0;
+  border-radius: 10px;
+  width: 200px;
+  right: calc(50% - 100px);
+  bottom: 5%;
+}
+
 /* Update/Delete Posts */
 .update-post {
   margin-top: 16px;
@@ -243,6 +257,7 @@ input,
   margin: 20px auto 0;
 }
 
-#delete-btn {
+#delete-btn,
+#create-post-btn {
   margin-bottom: 20px;
 }

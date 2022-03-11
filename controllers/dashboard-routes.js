@@ -17,6 +17,11 @@ router.get("/", (req, res) => {
     });
 });
 
+// Add post - Comes before /:id path or will be treated as one
+router.get("/new-post", (req, res) => {
+  res.render("new-post");
+});
+
 // Get single post to edit or delete
 router.get("/:id", (req, res) => {
   Post.findOne({
