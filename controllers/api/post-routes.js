@@ -37,7 +37,7 @@ router.get("/:id", (req, res) => {
 
       res.status(200).json(data);
     })
-    .catch.catch((err) => {
+    .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
@@ -46,7 +46,7 @@ router.get("/:id", (req, res) => {
 // Create Post - api/posts
 router.post("/", (req, res) => {
   Post.create({
-    user_id: req.body.user_id,
+    user_id: req.session.user_id,
     title: req.body.title,
     post_text: req.body.post_text,
   })

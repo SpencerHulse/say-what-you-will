@@ -43,7 +43,6 @@ router.get("/:id", (req, res) => {
 router.post("/", (req, res) => {
   User.create({
     username: req.body.username,
-    email: req.body.email,
     password: req.body.password,
   })
     .then((data) => {
@@ -64,10 +63,10 @@ router.post("/", (req, res) => {
 // Login to account api/users/login
 router.post("/login", (req, res) => {
   // Query operations
-  User.findOne({ where: { email: req.body.email } })
+  User.findOne({ where: { username: req.body.username } })
     .then((data) => {
       if (!data) {
-        res.status(404).json({ message: "No user found with this email" });
+        res.status(404).json({ message: "No user found with this username" });
         return;
       }
 

@@ -4,7 +4,7 @@ const { Post, Comment, User } = require("../models");
 // Get all posts for the user
 router.get("/", (req, res) => {
   Post.findAll({
-    where: { user_id: 1 /* req.session.user.id */ },
+    where: { user_id: req.session.user_id },
     attributes: ["id", "title", "created_at"],
   })
     .then((data) => {
@@ -19,7 +19,7 @@ router.get("/", (req, res) => {
 
 // Add post - Comes before /:id path or will be treated as one
 router.get("/new-post", (req, res) => {
-  res.render("new-post");
+  res.render("new-post", { loggedIn: req.session.loggedIn });
 });
 
 // Get single post to edit or delete

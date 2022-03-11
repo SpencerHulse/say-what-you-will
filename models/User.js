@@ -22,14 +22,6 @@ User.init(
       allowNull: false,
       // Validate length? Unique?
     },
-    email: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      unique: true,
-      validate: {
-        isEmail: true,
-      },
-    },
     password: {
       type: DataTypes.STRING,
       allowNull: false,

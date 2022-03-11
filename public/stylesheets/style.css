@@ -65,6 +65,13 @@ nav button {
   margin-right: 0;
 }
 
+#logout {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  cursor: pointer;
+}
+
 ol {
   list-style: none;
   padding: 0;
@@ -191,7 +198,7 @@ input,
   color: white;
 }
 
-.account-btn,
+.account-btn:hover,
 .update-post-btn:hover {
   background-color: var(--button-hover-color);
 }
