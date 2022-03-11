@@ -22,6 +22,10 @@ header {
   padding-bottom: 5px;
 }
 
+p {
+  font-size: 20px;
+}
+
 .header-wrapper {
   width: 90%;
   margin: 0 auto;
@@ -64,8 +68,10 @@ ol {
   padding: 0;
 }
 
-/* Posts */
-.post {
+/* Posts and Comments */
+/* boxes around posts and comments */
+.post,
+.comment {
   width: 90%;
   margin: 0 auto;
   border: 3px solid var(--primary-color);
@@ -88,12 +94,23 @@ ol {
 }
 
 .meta {
-  font-size: 16px;
   margin-bottom: 3px;
   margin-left: 25px;
+  font-size: 20px;
 }
 
-.post-content {
-  font-size: 18px;
+.post-content,
+.comment-content {
   margin: 10px 20px;
+}
+
+/* Comments */
+.comment-heading {
+  padding: 25px 0 25px 0;
+  background-color: var(--primary-color);
+  margin-bottom: 30px;
+}
+
+.meta-comment {
+  margin-bottom: 30px;
 }
