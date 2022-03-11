@@ -5,6 +5,8 @@
 :root {
   --primary-color: rgba(35, 16, 16, 255);
   --secondary-color: rgba(217, 234, 211, 255);
+  --button-color: rgba(102, 102, 102, 0.7);
+  --button-hover-color: rgba(102, 102, 102, 1);
 }
 
 /* Main Handlebars */
@@ -70,13 +72,10 @@ ol {
 
 /* Posts and Comments */
 /* boxes around posts and comments */
-.post,
-.comment,
-.comment-form {
+.box {
   width: 90%;
-  margin: 0 auto;
+  margin: 0 auto 20px;
   border: 3px solid var(--primary-color);
-  margin-bottom: 20px;
 }
 
 .post-heading {
@@ -106,7 +105,7 @@ ol {
 }
 
 /* Comments */
-.comment-heading {
+.box-heading {
   padding: 25px 0 25px 0;
   background-color: var(--primary-color);
   margin-bottom: 30px;
@@ -117,7 +116,8 @@ ol {
 }
 
 /* Add Comment */
-.add-comment-heading {
+.add-comment-heading,
+.account-heading {
   margin-bottom: 0;
 }
 
@@ -146,16 +146,54 @@ ol {
 .submit-comment {
   margin-bottom: 20px;
   padding: 10px 0 10px 0;
-  background-color: rgba(102, 102, 102, 0.7);
+  background-color: var(--button-color);
   color: white;
   border-radius: 8px;
 }
 
 .submit-comment:hover {
-  background-color: rgba(102, 102, 102, 1);
+  background-color: var(--button-hover-color);
 }
 
 .add-comment-body {
   width: 97.5%;
   margin: 0 auto;
+}
+
+/* Login and Sign-up */
+.account-form {
+  margin-top: 1em;
+  max-width: 500px;
+  font-size: 20px;
+}
+
+.account-form-wrapper {
+  margin: 10px 20px 20px;
+}
+
+input {
+  height: 40px;
+}
+
+input,
+.account-btn {
+  font-size: 20px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.account-btn {
+  padding: 10px 0;
+  border-radius: 8px;
+  background-color: var(--button-color);
+  color: white;
+}
+
+.account-btn:hover {
+  background-color: var(--button-hover-color);
+}
+
+.account-link {
+  text-decoration: none;
+  margin-left: 5px;
 }
