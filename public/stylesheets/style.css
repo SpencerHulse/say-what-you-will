@@ -197,3 +197,26 @@ input,
   text-decoration: none;
   margin-left: 5px;
 }
+
+/* Dashboard */
+.dashboard-post-wrapper {
+  width: 90%;
+  margin: 20px auto 0;
+  background-color: var(--button-color);
+  border-radius: 15px;
+}
+
+.dashboard-post-link {
+  text-decoration: none;
+  color: white;
+}
+
+.dashboard-post-link:hover {
+  background-color: var(--button-hover-color);
+}
+
+.dashboard-post {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+}
