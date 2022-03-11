@@ -138,7 +138,7 @@ ol {
 }
 
 .comment-textarea:focus {
-  outline: none !important;
+  outline: none;
   border: 3px solid #719ece;
   box-shadow: 0 0 3px #719ece;
 }
@@ -162,7 +162,7 @@ ol {
 
 /* Login and Sign-up */
 .account-form {
-  margin-top: 1em;
+  margin-top: 16px;
   max-width: 500px;
   font-size: 20px;
 }
@@ -176,20 +176,23 @@ input {
 }
 
 input,
-.account-btn {
+.account-btn,
+.update-post-btn {
   font-size: 20px;
   width: 100%;
   margin-bottom: 10px;
 }
 
-.account-btn {
+.account-btn,
+.update-post-btn {
   padding: 10px 0;
   border-radius: 8px;
   background-color: var(--button-color);
   color: white;
 }
 
-.account-btn:hover {
+.account-btn,
+.update-post-btn:hover {
   background-color: var(--button-hover-color);
 }
 
@@ -201,7 +204,7 @@ input,
 /* Dashboard */
 .dashboard-post-wrapper {
   width: 90%;
-  margin: 20px auto 0;
+  margin: 16px auto 0;
   background-color: var(--button-color);
   border-radius: 15px;
 }
@@ -219,4 +222,27 @@ input,
   display: flex;
   justify-content: space-between;
   padding: 0 20px;
+}
+
+/* Update/Delete Posts */
+.update-post {
+  margin-top: 16px;
+  font-size: 26px;
+}
+
+#edit-post-title,
+.update-post-textarea {
+  outline: none;
+  border: 3px solid #719ece;
+  box-shadow: 0 0 3px #719ece;
+  margin-bottom: 20px;
+}
+
+.update-wrapper {
+  width: 97.5%;
+  margin: 20px auto 0;
+}
+
+#delete-btn {
+  margin-bottom: 20px;
 }

@@ -26,7 +26,7 @@ router.get("/:id", (req, res) => {
     .then((data) => {
       const post = data.get({ plain: true });
 
-      res.render("single-post", {
+      res.render("update-post", {
         post,
         loggedIn: req.session.loggedIn,
       });
