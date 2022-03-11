@@ -2,4 +2,15 @@
 {{> post-info post}}
 </ol>
 
+{{#if loggedIn}}
+<form class="comment-form">
+  <div class="comment-heading add-comment-heading"></div>
+  <p>Comment</p>
+  <div class="add-comment-body">
+    <textarea name="comment-body" class="comment-textarea"></textarea>
+    <button type="submit" class="submit-comment">Submit</button>
+  </div>
+</form>
+{{/if}}
+
 {{> comments post.comments}}

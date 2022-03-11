@@ -71,7 +71,8 @@ ol {
 /* Posts and Comments */
 /* boxes around posts and comments */
 .post,
-.comment {
+.comment,
+.comment-form {
   width: 90%;
   margin: 0 auto;
   border: 3px solid var(--primary-color);
@@ -113,4 +114,48 @@ ol {
 
 .meta-comment {
   margin-bottom: 30px;
+}
+
+/* Add Comment */
+.add-comment-heading {
+  margin-bottom: 0;
+}
+
+.comment-form p {
+  margin: 10px 0 10px 25px;
+}
+
+.comment-textarea,
+.submit-comment {
+  width: 100%;
+  font-size: 20px;
+}
+
+.comment-textarea {
+  margin-bottom: 10px;
+  resize: none;
+  height: 100px;
+}
+
+.comment-textarea:focus {
+  outline: none !important;
+  border: 3px solid #719ece;
+  box-shadow: 0 0 3px #719ece;
+}
+
+.submit-comment {
+  margin-bottom: 20px;
+  padding: 10px 0 10px 0;
+  background-color: rgba(102, 102, 102, 0.7);
+  color: white;
+  border-radius: 8px;
+}
+
+.submit-comment:hover {
+  background-color: rgba(102, 102, 102, 1);
+}
+
+.add-comment-body {
+  width: 97.5%;
+  margin: 0 auto;
 }
