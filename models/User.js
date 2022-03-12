@@ -20,15 +20,10 @@ User.init(
       type: DataTypes.STRING,
       unique: true,
       allowNull: false,
-      // Validate length? Unique?
     },
     password: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        len: [4],
-      },
-      // Ensure it has a number or something?
     },
   },
   {

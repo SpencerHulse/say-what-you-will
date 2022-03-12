@@ -77,8 +77,8 @@ ol {
   padding: 0;
 }
 
-/* Posts and Comments */
-/* boxes around posts and comments */
+/* Posts and Comments Style Start */
+/* boxes around various elements on the site */
 .box {
   width: 90%;
   margin: 0 auto 20px;
@@ -111,7 +111,7 @@ ol {
   margin: 10px 20px;
 }
 
-/* Comments */
+/* Comments Style Start */
 .box-heading {
   padding: 25px 0 25px 0;
   background-color: var(--primary-color);
@@ -122,7 +122,7 @@ ol {
   margin-bottom: 30px;
 }
 
-/* Add Comment */
+/* Add Comment Style Start */
 .add-comment-heading,
 .account-heading {
   margin-bottom: 0;
@@ -162,12 +162,14 @@ ol {
   background-color: var(--button-hover-color);
 }
 
-.add-comment-body {
+/* .updated-wrapper is from update-post style */
+.add-comment-body,
+.update-wrapper {
   width: 97.5%;
   margin: 0 auto;
 }
 
-/* Login and Sign-up */
+/* Login and Sign Up Style Start */
 .account-form {
   margin-top: 16px;
   max-width: 500px;
@@ -208,7 +210,7 @@ input,
   margin-left: 5px;
 }
 
-/* Dashboard */
+/* Dashboard Style Start */
 .dashboard-post-wrapper {
   width: 90%;
   margin: 16px auto 0;
@@ -245,7 +247,7 @@ input,
   bottom: 5%;
 }
 
-/* Update/Delete Posts */
+/* Update/Delete Posts Style Start */
 .update-post {
   margin-top: 16px;
   font-size: 26px;
@@ -258,11 +260,6 @@ input,
   border: 3px solid #719ece;
   box-shadow: 0 0 3px #719ece;
   margin-bottom: 20px;
-}
-
-.update-wrapper {
-  width: 97.5%;
-  margin: 20px auto 0;
 }
 
 #delete-btn,
