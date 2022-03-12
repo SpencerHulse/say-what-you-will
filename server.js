@@ -39,6 +39,6 @@ app.use(require("./controllers/index"));
 
 // Database and Server
 const PORT = process.env.PORT || 3001;
-sequelize.sync({ force: false /* alter: true */ }).then(() => {
+sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log(`Listening on port ${PORT}...`));
 });
