@@ -1,3 +1,5 @@
+{{> header headline="Say What You Will"}}
+
 <ol class="post-list">
 {{> post-info post}}
 </ol>
@@ -7,10 +9,14 @@
   <div class="box-heading add-comment-heading"></div>
   <p>Comment</p>
   <div class="add-comment-body">
-    <textarea name="comment-body" class="comment-textarea"></textarea>
-    <button type="submit" class="submit-comment">Submit</button>
+    <textarea name="comment-body" class="comment-textarea" id="comment-body"></textarea>
+    <button class="submit-comment" id="submit-comment">Submit</button>
   </div>
 </form>
 {{/if}}
 
 {{> comments post.comments}}
+
+{{#if loggedIn}}
+<script src="/javascript/comment.js"></script>
+{{/if}}
